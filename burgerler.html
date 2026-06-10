@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burgerler — Füme Burger</title>
+<meta name="description" content="Füme Burger Denizli — Burger menüsü ve fiyatları.">
+<meta name="theme-color" content="#0D0C0B">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🍔&lt;/text&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <span class="badge">🍔 En Sevilen Lezzetler</span>
+    <h1 class="display">Burgerler</h1>
+    <p class="tag">Günlük taze ekmek, özel brisket ve ev yapımı füme soslar</p>
+  </div>
+</header>
+
+<div class="sticky-header-container">
+  <div class="search-wrapper">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Menüde ara... (ör. Brisket, classic)" oninput="handleSearch()">
+      <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()">✕</button>
+    </div>
+  </div>
+  
+  <nav id="categoryNav">
+    <a href="index.html" class="nav-tab">Tümü</a>
+    <a href="burgerler.html" class="nav-tab active">Burgerler</a>
+    <a href="tabak-lezzetler.html" class="nav-tab">Tabaklar</a>
+    <a href="citirlar.html" class="nav-tab">Çıtırlar</a>
+    <a href="sicaklar.html" class="nav-tab">Sıcaklar</a>
+    <a href="icecekler.html" class="nav-tab">İçecekler</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Search Empty State -->
+  <div id="emptyState" class="empty-state">
+    <i>😕</i>
+    <p>Aradığınız kriterde ürün bulunamadı.</p>
+  </div>
+
+  <section id="burgerler" class="menu-section">
+    <article class="item feat" data-name="Brisket Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <span class="chip">Şefin Önerisi</span>
+          <div class="row">
+            <h3>Brisket Burger</h3>
+            <span class="price">650₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, cheddar sos, tiftilmiş füme brisket, cheddar peyniri</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('brisket-burger.png', 'Brisket Burger')">
+          <img src="brisket-burger.png" alt="Brisket Burger" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Füme Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Füme Burger</h3>
+            <span class="price">520₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, burger sos, marul, smash köfte, füme brisket dilim, domates, karamelize soğan, füme özel sos</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('fume-burger.png', 'Füme Burger')">
+          <img src="fume-burger.png" alt="Füme Burger" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Double Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Double Burger</h3>
+            <span class="price">440₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, burger sos, 2 adet smash köfte, domates, karamelize soğan, füme özel sos</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('double-burger.png', 'Double Burger')">
+          <img src="double-burger.png" alt="Double Burger" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Cheese Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Cheese Burger</h3>
+            <span class="price">360₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, cheddar sos, smash köfte, cheddar peyniri, karamelize soğan, füme özel sos</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('cheese-burger.png', 'Cheese Burger')">
+          <img src="cheese-burger.png" alt="Cheese Burger" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item feat" data-name="Classic Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Classic Burger</h3>
+            <span class="price">320₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, burger sos, marul, smash köfte, domates, karamelize soğan, füme özel sos</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('klasik-burger.png', 'Classic Burger')">
+          <img src="klasik-burger.png" alt="Classic Burger" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Çıtır Burger">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Çıtır Burger</h3>
+            <span class="price">290₺</span>
+          </div>
+          <p class="desc">Burger ekmeği, burger sos, marul, çıtır tavuk fileto, domates, karamelize soğan, füme özel sos</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Yemek Görseli" onclick="event.stopPropagation()">
+</div>
+
+<footer>
+  <div class="f-inner">
+    <h2 class="display">Füme Burger</h2>
+    <div class="f-grid">
+      <div class="f-card">
+        <b>📍 Adres</b>
+        Bahçelievler Mah. 3007. Sk. No:28 D:F<br>
+        (Özel Sağlık Hastanesi karşısı)<br>
+        Merkezefendi / Denizli
+      </div>
+      <div class="f-card">
+        <b>🕒 Çalışma Saatleri</b>
+        Her gün · 21:30'a kadar<br><br>
+        <b>📞 Paket Servis / İletişim</b>
+        0542 806 66 80
+      </div>
+    </div>
+    <a class="call" href="tel:+905428066680">📞 Sipariş Hattı: 0542 806 66 80</a>
+    <p class="copyright">© 2026 Füme Burger · Tüm fiyatlar TL'dir, değişiklik gösterebilir.</p>
+  </div>
+</footer>
+
+<script>
+function openLightbox(src, altText) {
+  const lightbox = document.getElementById('imageLightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  img.alt = altText || 'Yemek Görseli';
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('imageLightbox');
+  lightbox.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+function handleSearch() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const items = document.querySelectorAll('.item');
+  const emptyState = document.getElementById('emptyState');
+  
+  if (query.length > 0) {
+    clearBtn.style.display = 'block';
+  } else {
+    clearBtn.style.display = 'none';
+  }
+
+  let visibleCount = 0;
+  items.forEach(item => {
+    const name = (item.getAttribute('data-name') || '').toLowerCase();
+    const descElement = item.querySelector('.desc');
+    const desc = descElement ? descElement.innerText.toLowerCase() : '';
+    
+    if (name.includes(query) || desc.includes(query)) {
+      item.style.display = 'block';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  if (visibleCount === 0 && query.length > 0) {
+    emptyState.style.display = 'block';
+  } else {
+    emptyState.style.display = 'none';
+  }
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  handleSearch();
+  document.getElementById('searchInput').focus();
+}
+
+// Center active category nav tab on load
+window.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('categoryNav');
+  const activeLink = nav.querySelector('a.active');
+  if (activeLink) {
+    nav.scrollTo({
+      left: activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2),
+      behavior: 'auto'
+    });
+  }
+});
+</script>
+
+</body>
+</html>

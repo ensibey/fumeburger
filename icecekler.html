@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İçecekler — Füme Burger</title>
+<meta name="description" content="Füme Burger Denizli — Sıcak ve soğuk içecek çeşitleri.">
+<meta name="theme-color" content="#0D0C0B">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🍔&lt;/text&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <span class="badge">☕ Sıcak &amp; Soğuk İçecekler</span>
+    <h1 class="display">İçecekler</h1>
+    <p class="tag">Yemeğinizin yanına yakışacak tazeleyici içecekler</p>
+  </div>
+</header>
+
+<div class="sticky-header-container">
+  <div class="search-wrapper">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Menüde ara... (ör. Çay, cola, kahve)" oninput="handleSearch()">
+      <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()">✕</button>
+    </div>
+  </div>
+  
+  <nav id="categoryNav">
+    <a href="index.html" class="nav-tab">Tümü</a>
+    <a href="burgerler.html" class="nav-tab">Burgerler</a>
+    <a href="tabak-lezzetler.html" class="nav-tab">Tabaklar</a>
+    <a href="citirlar.html" class="nav-tab">Çıtırlar</a>
+    <a href="sicaklar.html" class="nav-tab">Sıcaklar</a>
+    <a href="icecekler.html" class="nav-tab active">İçecekler</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Search Empty State -->
+  <div id="emptyState" class="empty-state">
+    <i>😕</i>
+    <p>Aradığınız kriterde ürün bulunamadı.</p>
+  </div>
+
+  <section id="icecekler" class="menu-section">
+    <h3 style="margin: 15px 0 10px; color: var(--primary); font-size: 16px;">Soğuk İçecekler</h3>
+    <div class="drinks">
+      <div class="drink" data-name="Ayran">
+        <div class="drink-info">
+          <span class="drink-name">Ayran</span>
+          <span class="price">20₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Coca Cola 20 cl">
+        <div class="drink-info">
+          <span class="drink-name">Coca Cola 20 cl</span>
+          <span class="price">50₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Coca Cola 33 cl">
+        <div class="drink-info">
+          <span class="drink-name">Coca Cola 33 cl</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Fanta">
+        <div class="drink-info">
+          <span class="drink-name">Fanta</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Sprite">
+        <div class="drink-info">
+          <span class="drink-name">Sprite</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Fuse Tea">
+        <div class="drink-info">
+          <span class="drink-name">Fuse Tea</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Uludağ Frutti">
+        <div class="drink-info">
+          <span class="drink-name">Uludağ Frutti</span>
+          <span class="price">50₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Meyveli Soda">
+        <div class="drink-info">
+          <span class="drink-name">Meyveli Soda</span>
+          <span class="price">35₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Sade Soda">
+        <div class="drink-info">
+          <span class="drink-name">Sade Soda</span>
+          <span class="price">30₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Zafer Gazoz">
+        <div class="drink-info">
+          <span class="drink-name">Zafer Gazoz</span>
+          <span class="price">30₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Su">
+        <div class="drink-info">
+          <span class="drink-name">Su</span>
+          <span class="price">15₺</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin: 30px 0 10px; color: var(--primary); font-size: 16px;">Sıcak İçecekler</h3>
+    <div class="drinks">
+      <div class="drink" data-name="Çay">
+        <div class="drink-info">
+          <span class="drink-name">Çay</span>
+          <span class="price">15₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Büyük Çay">
+        <div class="drink-info">
+          <span class="drink-name">Büyük Çay</span>
+          <span class="price">30₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Bitki Çayları">
+        <div class="drink-info">
+          <span class="drink-name">Bitki Çayları</span>
+          <span class="price">35₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Nescafe">
+        <div class="drink-info">
+          <span class="drink-name">Nescafe</span>
+          <span class="price">30₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Türk Kahvesi">
+        <div class="drink-info">
+          <span class="drink-name">Türk Kahvesi</span>
+          <span class="price">40₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Espresso">
+        <div class="drink-info">
+          <span class="drink-name">Espresso</span>
+          <span class="price">60₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Americano">
+        <div class="drink-info">
+          <span class="drink-name">Americano</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Filtre Kahve">
+        <div class="drink-info">
+          <span class="drink-name">Filtre Kahve</span>
+          <span class="price">70₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Karamel Latte">
+        <div class="drink-info">
+          <span class="drink-name">Karamel Latte</span>
+          <span class="price">80₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Mocha">
+        <div class="drink-info">
+          <span class="drink-name">Mocha</span>
+          <span class="price">80₺</span>
+        </div>
+      </div>
+
+      <div class="drink" data-name="Sıcak Çikolata">
+        <div class="drink-info">
+          <span class="drink-name">Sıcak Çikolata</span>
+          <span class="price">100₺</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="f-inner">
+    <h2 class="display">Füme Burger</h2>
+    <div class="f-grid">
+      <div class="f-card">
+        <b>📍 Adres</b>
+        Bahçelievler Mah. 3007. Sk. No:28 D:F<br>
+        (Özel Sağlık Hastanesi karşısı)<br>
+        Merkezefendi / Denizli
+      </div>
+      <div class="f-card">
+        <b>🕒 Çalışma Saatleri</b>
+        Her gün · 21:30'a kadar<br><br>
+        <b>📞 Paket Servis / İletişim</b>
+        0542 806 66 80
+      </div>
+    </div>
+    <a class="call" href="tel:+905428066680">📞 Sipariş Hattı: 0542 806 66 80</a>
+    <p class="copyright">© 2026 Füme Burger · Tüm fiyatlar TL'dir, değişiklik gösterebilir.</p>
+  </div>
+</footer>
+
+<script>
+function handleSearch() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const items = document.querySelectorAll('.drink');
+  const emptyState = document.getElementById('emptyState');
+  
+  if (query.length > 0) {
+    clearBtn.style.display = 'block';
+  } else {
+    clearBtn.style.display = 'none';
+  }
+
+  let visibleCount = 0;
+  items.forEach(item => {
+    const name = (item.getAttribute('data-name') || '').toLowerCase();
+    
+    if (name.includes(query)) {
+      item.style.display = 'flex';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  if (visibleCount === 0 && query.length > 0) {
+    emptyState.style.display = 'block';
+  } else {
+    emptyState.style.display = 'none';
+  }
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  handleSearch();
+  document.getElementById('searchInput').focus();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('categoryNav');
+  const activeLink = nav.querySelector('a.active');
+  if (activeLink) {
+    nav.scrollTo({
+      left: activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2),
+      behavior: 'auto'
+    });
+  }
+});
+</script>
+
+</body>
+</html>

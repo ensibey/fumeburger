@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabak Lezzetler — Füme Burger</title>
+<meta name="description" content="Füme Burger Denizli — Tabak Lezzetler menüsü ve fiyatları.">
+<meta name="theme-color" content="#0D0C0B">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🍔&lt;/text&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <span class="badge">🍽️ Doyurucu Tabaklar</span>
+    <h1 class="display">Tabaklar</h1>
+    <p class="tag">Özel sunumuyla doyurucu porsiyonlar, salata ve patates eşliğinde</p>
+  </div>
+</header>
+
+<div class="sticky-header-container">
+  <div class="search-wrapper">
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Menüde ara... (ör. Köfte, tavuk)" oninput="handleSearch()">
+      <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()">✕</button>
+    </div>
+  </div>
+  
+  <nav id="categoryNav">
+    <a href="index.html" class="nav-tab">Tümü</a>
+    <a href="burgerler.html" class="nav-tab">Burgerler</a>
+    <a href="tabak-lezzetler.html" class="nav-tab active">Tabaklar</a>
+    <a href="citirlar.html" class="nav-tab">Çıtırlar</a>
+    <a href="sicaklar.html" class="nav-tab">Sıcaklar</a>
+    <a href="icecekler.html" class="nav-tab">İçecekler</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Search Empty State -->
+  <div id="emptyState" class="empty-state">
+    <i>😕</i>
+    <p>Aradığınız kriterde ürün bulunamadı.</p>
+  </div>
+
+  <section id="tabaklar" class="menu-section">
+    <article class="item" data-name="Köfte Porsiyon">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Köfte Porsiyon</h3>
+            <span class="price">300₺</span>
+          </div>
+          <p class="desc">Denizli köfte, patates cipsi, salata</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('kofte-porsiyon.png', 'Köfte Porsiyon')">
+          <img src="kofte-porsiyon.png" alt="Köfte Porsiyon" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Körili Tavuk">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Körili Tavuk</h3>
+            <span class="price">280₺</span>
+          </div>
+          <p class="desc">Kremalı körili tavuk sote, kremalı makarna, salata</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Barbekülü Tavuk">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Barbekülü Tavuk</h3>
+            <span class="price">280₺</span>
+          </div>
+          <p class="desc">Kremalı barbekü soslu tavuk sote, kremalı makarna, salata</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Kekikli Tavuk">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Kekikli Tavuk</h3>
+            <span class="price">280₺</span>
+          </div>
+          <p class="desc">Kremalı kekikli tavuk sote, kremalı makarna, salata</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Mantarlı Tavuk">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Mantarlı Tavuk</h3>
+            <span class="price">280₺</span>
+          </div>
+          <p class="desc">Kremalı mantarlı tavuk sote, kremalı makarna, salata</p>
+        </div>
+        <div class="item-img-container" onclick="openLightbox('mantarli-tavuk.png', 'Mantarlı Tavuk')">
+          <img src="mantarli-tavuk.png" alt="Mantarlı Tavuk" loading="lazy">
+          <span class="zoom-hint">🔍</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="item" data-name="Sote Tavuk">
+      <div class="item-layout">
+        <div class="item-details">
+          <div class="row">
+            <h3>Sote</h3>
+            <span class="price">280₺</span>
+          </div>
+          <p class="desc">Baharatlı sote tavuk, patates cipsi, salata</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="imageLightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Yemek Görseli" onclick="event.stopPropagation()">
+</div>
+
+<footer>
+  <div class="f-inner">
+    <h2 class="display">Füme Burger</h2>
+    <div class="f-grid">
+      <div class="f-card">
+        <b>📍 Adres</b>
+        Bahçelievler Mah. 3007. Sk. No:28 D:F<br>
+        (Özel Sağlık Hastanesi karşısı)<br>
+        Merkezefendi / Denizli
+      </div>
+      <div class="f-card">
+        <b>🕒 Çalışma Saatleri</b>
+        Her gün · 21:30'a kadar<br><br>
+        <b>📞 Paket Servis / İletişim</b>
+        0542 806 66 80
+      </div>
+    </div>
+    <a class="call" href="tel:+905428066680">📞 Sipariş Hattı: 0542 806 66 80</a>
+    <p class="copyright">© 2026 Füme Burger · Tüm fiyatlar TL'dir, değişiklik gösterebilir.</p>
+  </div>
+</footer>
+
+<script>
+function openLightbox(src, altText) {
+  const lightbox = document.getElementById('imageLightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  img.alt = altText || 'Yemek Görseli';
+  lightbox.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('imageLightbox');
+  lightbox.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+function handleSearch() {
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const items = document.querySelectorAll('.item');
+  const emptyState = document.getElementById('emptyState');
+  
+  if (query.length > 0) {
+    clearBtn.style.display = 'block';
+  } else {
+    clearBtn.style.display = 'none';
+  }
+
+  let visibleCount = 0;
+  items.forEach(item => {
+    const name = (item.getAttribute('data-name') || '').toLowerCase();
+    const descElement = item.querySelector('.desc');
+    const desc = descElement ? descElement.innerText.toLowerCase() : '';
+    
+    if (name.includes(query) || desc.includes(query)) {
+      item.style.display = 'block';
+      visibleCount++;
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  if (visibleCount === 0 && query.length > 0) {
+    emptyState.style.display = 'block';
+  } else {
+    emptyState.style.display = 'none';
+  }
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  handleSearch();
+  document.getElementById('searchInput').focus();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('categoryNav');
+  const activeLink = nav.querySelector('a.active');
+  if (activeLink) {
+    nav.scrollTo({
+      left: activeLink.offsetLeft - (nav.offsetWidth / 2) + (activeLink.offsetWidth / 2),
+      behavior: 'auto'
+    });
+  }
+});
+</script>
+
+</body>
+</html>
